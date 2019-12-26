@@ -29,7 +29,7 @@ public class User {
         pwd = new String();
         mail = new String();
         friendList = new ArrayList<>();
-        System.out.println("ay 5ara");
+        System.out.println("orabi");
     }
 
     public User(Adminstrator admin) {
