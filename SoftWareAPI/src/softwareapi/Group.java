@@ -7,10 +7,7 @@ package softwareapi;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author mahmoudsaeed
- */
+
 public class Group implements controler {
 	public User admin;
     public String name;
@@ -27,6 +24,7 @@ public class Group implements controler {
         posts = new ArrayList<>();
         type = "public";
     }
+  
 
     public Group(User admin, String name, String type) {
         this.admin = admin;
