@@ -29,7 +29,6 @@ public class User {
         pwd = new String();
         mail = new String();
         friendList = new ArrayList<>();
-        System.out.println("hi test");
     }
 
     public User(Adminstrator admin) {
