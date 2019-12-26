@@ -21,7 +21,7 @@ public class User {
     public ArrayList<Group> groups;
     public ArrayList<Page> pages;
     private ArrayList<Post>posts;
-    private ArrayList<Hashtag>hashtags;
+    private ArrayList<Hashtag>hashtag;
     Adminstrator admin = new Adminstrator();
 
     public User() {
