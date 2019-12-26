@@ -107,19 +107,19 @@ public class Adminstrator {
 //        }
 //        return false;
 //    }
-    public boolean leaveGroup(User user, String groupName) {
-        for (int i = 0; i < allGroups.size(); i++) {
-            if (allGroups.get(i).name.equals(groupName)) {
-                for (int j = 0; j < allGroups.get(i).members.size(); j++) {
-                    if (allGroups.get(i).members.get(j).equals(user.name)) {
-                        allGroups.get(i).members.remove(allGroups.get(i).members.get(j));
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
-    }
+//    public boolean leaveGroup(User user, String groupName) {
+//        for (int i = 0; i < allGroups.size(); i++) {
+//            if (allGroups.get(i).name.equals(groupName)) {
+//                for (int j = 0; j < allGroups.get(i).members.size(); j++) {
+//                    if (allGroups.get(i).members.get(j).equals(user.name)) {
+//                        allGroups.get(i).members.remove(allGroups.get(i).members.get(j));
+//                        return true;
+//                    }
+//                }
+//            }
+//        }
+//        return false;
+//    }
 //
 //    public boolean createGroup(User user, String groupName , String type) {
 //        Group newGroup = new Group();
@@ -131,38 +131,38 @@ public class Adminstrator {
 //        return true;
 //    }
 
-    public boolean deleteGroup(User user, String groupName) {
-        boolean deleted = false;
-        for (int i = 0; i < allGroups.size(); i++) {
-            if (allGroups.get(i).name.equals(groupName) && allGroups.get(i).admin.equals(user.name)) {
-                allGroups.remove(allGroups.get(i));
-                deleted = true;
-            }
-        }
-        if (deleted) {
-            for (int i = 0; i < user.groups.size(); i++) {
-                if (user.groups.get(i).name.equals(groupName)) {
-                    user.groups.remove(user.groups.get(i));
-                }
-            }
-        }
-        return deleted;
-    }
+//    public boolean deleteGroup(User user, String groupName) {
+//        boolean deleted = false;
+//        for (int i = 0; i < allGroups.size(); i++) {
+//            if (allGroups.get(i).name.equals(groupName) && allGroups.get(i).admin.equals(user.name)) {
+//                allGroups.remove(allGroups.get(i));
+//                deleted = true;
+//            }
+//        }
+//        if (deleted) {
+//            for (int i = 0; i < user.groups.size(); i++) {
+//                if (user.groups.get(i).name.equals(groupName)) {
+//                    user.groups.remove(user.groups.get(i));
+//                }
+//            }
+//        }
+//        return deleted;
+//    }
 
-    public boolean followPage(User user, String pageName) {
-        return false;
-    }
-
-    public boolean unFollowPage(User user, String pageName) {
-        return false;
-    }
-
-    public boolean createPage(User user, String pageName) {
-        return false;
-    }
-
-    public boolean deletePage(User user, String pageName) {
-        return false;
-    }
+//    public boolean followPage(User user, String pageName) {
+//        return false;
+//    }
+//
+//    public boolean unFollowPage(User user, String pageName) {
+//        return false;
+//    }
+//
+//    public boolean createPage(User user, String pageName) {
+//        return false;
+//    }
+//
+//    public boolean deletePage(User user, String pageName) {
+//        return false;
+//    }
 
 }
