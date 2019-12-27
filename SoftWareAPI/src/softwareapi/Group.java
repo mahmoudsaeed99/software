@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 
 public class Group implements controler {
-	public User admin;
+    public User admin;
     public String name;
     public ArrayList<User> members;
     public ArrayList<Post> posts;
