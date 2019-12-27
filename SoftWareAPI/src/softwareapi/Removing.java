@@ -7,11 +7,10 @@ package softwareapi;
 
 /**
  *
- * @author mahmoudsaeed
+ * @author COMPU1
  */
-public interface search {
-
-    public String search(User user,String name );
-     public int detailedSearch(User user,String name);
+public interface Removing {
+    
+    public void remove(String name,User user);
     
 }

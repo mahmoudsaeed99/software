@@ -10,9 +10,9 @@ package softwareapi;
  * @author mahmoudsaeed
  */
 public class premium extends User{
-
+  
     public premium() {
-
+          
     }
 
     public void updateProfile(String name, String pwd, String mail) {

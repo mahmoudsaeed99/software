@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author mahmoudsaeed
  */
-public class friendHandel implements search{
+public class friendHandel implements search , Removing{
     Adminstrator admin = new Adminstrator();
     
     public void addFriend(String friendName , User user){
@@ -39,12 +39,39 @@ public class friendHandel implements search{
         }
     }
     @Override
-    public void search(String name, User user) {
+    public String search(User user,String name ) {
         for(int i=0;i<admin.Signedup.size();i++){
             if(admin.Signedup.get(i).name.equals(name)){
-                System.out.println(admin.Signedup.get(i).name);
+               // System.out.println(admin.Signedup.get(i).name);
+                return admin.Signedup.get(i).name;
             }
         }
+        return " ";
     }
+
+    @Override
+    public void remove(String name, User user) {
+        int index=detailedSearch(user,name);
+        if(index==-1){
+            System.out.println("this friend is already not found in your friend list");
+            
+        }
+        else{
+            user.friendList.remove(index);
+        }
+    }
+    
+
+    @Override
+    public int detailedSearch(User user, String name) {
+        for(int i=0;i<user.friendList.size();i++){
+            if(name.equals(user.friendList.get(i).name)){
+                return i;
+            }
+        }
+        return -1;
+    }
+  
+    
     
 }
