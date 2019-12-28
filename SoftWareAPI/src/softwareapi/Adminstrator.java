@@ -16,11 +16,8 @@ public class Adminstrator {
     ArrayList<User> Signedup;
     ArrayList<User> premiumUser;
     ArrayList<User> normalUser;
-
     private ArrayList<User> logedin;
-
-    private ArrayList<Post> allPosts;
-    private ArrayList<Hashtag> allHashtags;
+    
 
     public Adminstrator() {
         Signedup = new ArrayList<>();
@@ -30,7 +27,7 @@ public class Adminstrator {
 
     public boolean signUpValidate(User newUser) {
         for (User user : Signedup) {
-            if (user.mail.equals(newUser.mail)) {
+            if (user.getMail().equals(newUser.getMail())) {
 
                 return false;
             }
@@ -43,7 +40,7 @@ public class Adminstrator {
     public boolean loginValidate(User newUser) {
         System.out.println(Signedup.size());
         for (User user : Signedup) {
-            if (user.name.equals(newUser.name) && user.pwd.equals(newUser.pwd)) {
+            if (user.name.equals(newUser.name) && user.getPwd().equals(newUser.getPwd())) {
                 System.out.println("ok");
                 return true;
             }
@@ -63,10 +60,10 @@ public class Adminstrator {
 
     public boolean updateInfo(User oldUser, User newUser) {
         for (int i = 0; i < premiumUser.size(); i++) {
-            if (oldUser.mail.equals(premiumUser.get(i).mail)) {
-                premiumUser.get(i).mail = newUser.mail;
+            if (oldUser.getMail().equals(premiumUser.get(i).getMail())) {
+                premiumUser.get(i).setMail(newUser.getMail()) ;
                 premiumUser.get(i).name = newUser.name;
-                premiumUser.get(i).pwd = newUser.pwd;
+                premiumUser.get(i).setPwd (newUser.getPwd());
                 return true;
             }
 
@@ -74,36 +71,9 @@ public class Adminstrator {
         return false;
     }
 
-//    public boolean addFriend(User user, String name) {
-    //      for (int i = 0; i < Signedup.size(); i++) {
-    //        if (Signedup.get(i).name.equals(user.name)) {
-//                user.friendList.add(name);
-//                return true;
-//            }
-//
-//        }
-//        return false;
-//
-//    }
-//    public boolean removeFriend(User user, String name) {
-//        for (int i = 0; i < Signedup.size(); i++) {
-//            if (Signedup.get(i).name.equals(user.name)) {
-//                for (int j = 0; j < Signedup.get(i).friendList.size(); j++) {
-//                    if (Signedup.get(i).friendList.get(j).equals(name)) {
-//                        Signedup.get(i).friendList.remove(Signedup.get(i).friendList.get(j));
-//                        return true;
-//                    }
-//
-//                }
-//            }
-//        }
-//        return false;
-//
-//    }
-//
     public boolean logOut(User user) {
         for (int i = 0; i < logedin.size(); i++) {
-            if (user.mail.equals(logedin.get(i).mail)) {
+            if (user.getMail().equals(logedin.get(i).getMail())) {
                 logedin.remove(logedin.get(i));
                 return true;
             }

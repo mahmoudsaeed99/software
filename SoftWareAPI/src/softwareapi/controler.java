@@ -10,7 +10,7 @@ package softwareapi;
  * @author C L
  */
 public interface controler {
-	public void createPost(String content,User owner);
-    public void createHashtag(String name,Post post);
+	public void createPost(String content,String name,User user);
+    public void createHashtag(String hashtagName,Post post,String Name);
     
 }

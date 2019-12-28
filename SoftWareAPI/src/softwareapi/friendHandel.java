@@ -24,7 +24,7 @@ public class friendHandel implements search , Removing{
         }
         System.out.println("this name not available");
     }
-    public void showRequestsFriend(User user){
+    public void makeFriendRequest(User user){
         Scanner in  = new Scanner(System.in);
         for(int i=0;i<user.friendRequest.size();i++){
             System.out.println(user.friendRequest.get(i).name);

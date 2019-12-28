@@ -7,13 +7,25 @@ package softwareapi;
 
 public class Normaluser extends User {
     public Normaluser(){
-      checkUserType=false;
+     System.out.println("this is normal user");
     }
 
-    public void upgrade(int  ccNum){
-        if(payViaCreditCard(ccNum)){
-        checkUserType=true;
+    public void upgrade(int choice){
+        Adminstrator admin=new Adminstrator();
+        
+        if(choice==1){
+            int ccNum = 0;
+            payViaCreditCard(ccNum);
+            admin.upgrade(this);
+                       
         }
+        if(choice==2){
+            int paypal = 0;
+            payViapayPal(paypal);
+            admin.upgrade(this);
+                       
+        }
+        
     }
     public boolean payViaCreditCard(int ccNum){
         return true;

@@ -10,8 +10,7 @@ import java.util.ArrayList;
 /**
  *
  * @author mahmoudsaeed
- */
-public class Page implements controler {
+ */public class Page  {
     public User admin;
     public String name;
     public String type;
@@ -35,28 +34,5 @@ public class Page implements controler {
 
   
 
-    @Override
-    public void createPost(String content, User owner) {
-         Post post = new Post();
-        posts.add(post.writepost(content, owner));
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void createHashtag(String name, Post post) {
-        boolean find = false;
-        for(int i=0;i<hashtags.size();i++){
-            if(name.equals(hashtags.get(i))){
-                hashtags.get(i).addPost(post);
-                find = true;
-            }
-        }
-        if(!find){
-            Hashtag hashtag = new Hashtag();
-            hashtag.writeHshtag(name, post);
-            hashtags.add(hashtag);
-        }
-        
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }
